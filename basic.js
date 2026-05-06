@@ -20,7 +20,7 @@ async function testBTN() {
 
     const sheetId = '3455901731082116';
     const resp = await fetch(
-        `https://corsproxy.io/?url=https://api.smartsheet.com/2.0/sheets/${sheetId}?${query}`,
+        `https://api.smartsheet.com/2.0/sheets/${sheetId}?${query}`,
         {
             method: 'GET',
             headers: {
