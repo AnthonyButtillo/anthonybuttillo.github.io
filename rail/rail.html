@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Smartsheet Forms</title>
+    <link rel="icon" href="https://forms.smartsheet.com/assets/form-app/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="https://forms.smartsheet.com/assets/form-app/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <style>@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,400i,500,700,900');</style>
+    <link rel="stylesheet" href="rail.css">
+</head>
+<body style="margin: 0">
+<img src="/logo.jpg" alt="Logo" id="logo">
+<div id="headers">
+    <h1 id="h1"></h1>
+    <h2 id="h2"></h2>
+</div>
+<div id="form">
+    <form id="form_inputs" name="input" autocomplete="off" onsubmit="trySubmit(event); return false"></form>
+</div>
+</body>
+<script src="constructor.js"></script>
+<script src="rail.js"></script>
+</html>

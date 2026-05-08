@@ -1,0 +1,654 @@
+{
+  "header": "1207 Seal Case Inspection - CMM Import Test",
+  "sub_header": "F-MG-01-021<br>Rev 20251030",
+  "logo": "/logo.jpg",
+  "output_sheet": "3627015463718788",
+  "id": "1207",
+  "fields": [
+    {
+      "type": "radio",
+      "id": "insp_type",
+      "label": "Inspection Type: ",
+      "default": null,
+      "required": true,
+      "options": [
+        {
+          "id": "fpi",
+          "display": "First Piece Inspection"
+        },
+        {
+          "id": "250",
+          "display": "Inspection @ 250"
+        },
+        {
+          "id": "500",
+          "display": "Inspection @ 500"
+        },
+        {
+          "id": "cc",
+          "display": "Coil Change"
+        },
+        {
+          "id": "adj",
+          "display": "Adjustment"
+        },
+        {
+          "id": "wwc",
+          "display": "Weld Wire Change"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "initials",
+      "label": "Inspector Initials",
+      "tag": "any",
+      "required": true
+    },
+    {
+      "type": "number",
+      "id": "counter",
+      "label": "Counter Number",
+      "tag": "any",
+      "required": true,
+      "min": 1000000,
+      "max": 99999999
+    },
+    {
+      "type": "number",
+      "id": "bin",
+      "label": "Final Bin #",
+      "tag": "any",
+      "required": true,
+      "min": 0,
+      "max": 99
+    },
+    {
+      "type": "divider",
+      "id": "fpi_divider",
+      "tag": "fpi"
+    },
+    {
+      "type": "label",
+      "label": "First Piece Inspection",
+      "id": "fpi_label",
+      "tag": "fpi"
+    },
+    {
+      "type": "number",
+      "id": "final_wo",
+      "label": "Final Work Order",
+      "tag": "fpi",
+      "required": true,
+      "min": 0,
+      "max": 9999
+    },
+    {
+      "type": "number",
+      "id": "blank_wo",
+      "label": "Blank Work Order",
+      "tag": "fpi",
+      "required": true,
+      "min": 0,
+      "max": 9999
+    },
+    {
+      "type": "date",
+      "id": "date",
+      "label": "Date",
+      "tag": "fpi",
+      "required": true,
+      "auto_date": "today_respect_nights"
+    },
+    {
+      "type": "radio",
+      "id": "shift",
+      "label": "Shift",
+      "tag": "fpi",
+      "required": true,
+      "options": [
+        {
+          "id": "1d",
+          "display": "1D"
+        },
+        {
+          "id": "2d",
+          "display": "2D"
+        },
+        {
+          "id": "1N",
+          "display": "1N"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "id": "machine",
+      "label": "Machine/Line",
+      "tag": "fpi",
+      "required": true,
+      "options": [
+        {
+          "id": "H1",
+          "display": "H1 626 Line A"
+        },
+        {
+          "id": "H4",
+          "display": "H4 650 Line C"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "id": "part",
+      "label": "Part #",
+      "tag": "fpi",
+      "required": true,
+      "options": [
+        "1207B.F1",
+        "1207G.F1",
+        "1207K.F1",
+        "1207ST.F1",
+        "1207B.MX.F1",
+        "1207G.MX.F1",
+        "1207ST.MX.F1",
+        "1207ST.CH.F1"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "ww_heat",
+      "label": "Weld Wire Heat",
+      "sub_label": "Part: 151501",
+      "tag": "fpi",
+      "required": true
+    },
+    {
+      "type": "radio",
+      "id": "micrometer",
+      "label": "Micrometer",
+      "tag": "fpi",
+      "required": true,
+      "options": [
+        "72013320",
+        "25192572"
+      ]
+    },
+    {
+      "type": "radio",
+      "id": "caliper",
+      "label": "Caliper",
+      "tag": "fpi",
+      "required": true,
+      "options": [
+        "06402537",
+        "B18134305",
+        "B18134262"
+      ]
+    },
+    {
+      "type": "divider",
+      "id": "cc_divider",
+      "tag": "cc"
+    },
+    {
+      "type": "label",
+      "label": "Coil",
+      "id": "cc_label",
+      "tag": "cc"
+    },
+    {
+      "type": "text",
+      "id": "coil_number",
+      "label": "Coil Number",
+      "sub_label": "Heat - Long Date - #\n(123456-111924-01)",
+      "tag": "cc",
+      "required": true
+    },
+    {
+      "type": "number",
+      "id": "strip_thickness",
+      "label": "Strip Thickness",
+      "sub_label": ".072 - .076",
+      "tag": "cc",
+      "required": true,
+      "min": 0.072,
+      "max": 0.076
+    },
+    {
+      "type": "divider",
+      "id": "visual_divider",
+      "tag": "visual"
+    },
+    {
+      "type": "label",
+      "label": "Visual",
+      "id": "visual_label",
+      "tag": "visual"
+    },
+    {
+      "type": "radio",
+      "id": "visual_overall",
+      "label": "Overall Visual",
+      "tag": "visual",
+      "required": true,
+      "alignment": "horizontal",
+      "options": [
+        "Accept",
+        "Reject"
+      ]
+    },
+    {
+      "type": "radio",
+      "id": "visual_weld",
+      "label": "Weld Quality",
+      "tag": "visual",
+      "required": true,
+      "alignment": "horizontal",
+      "options": [
+        "Accept",
+        "Reject"
+      ]
+    },
+    {
+      "type": "radio",
+      "id": "visual_stamps",
+      "label": "Verify Stamps Present & Correct",
+      "tag": "visual",
+      "required": true,
+      "alignment": "horizontal",
+      "options": [
+        "Accept",
+        "Reject"
+      ]
+    },
+    {
+      "type": "divider",
+      "id": "comparator_divider",
+      "tag": "comparator"
+    },
+    {
+      "type": "label",
+      "label": "Comparator",
+      "id": "comparator_label",
+      "tag": "comparator"
+    },
+    {
+      "type": "radio",
+      "id": "comparator_visual",
+      "label": "Profile Visual",
+      "tag": "comparator",
+      "required": true,
+      "alignment": "horizontal",
+      "options": [
+        "Accept",
+        "Reject"
+      ]
+    },
+    {
+      "type": "number",
+      "id": "chamfer_x",
+      "label": "Chamfer X",
+      "sub_label": "Min 0.015",
+      "tag": "comparator",
+      "required": true,
+      "decimals": "3",
+      "min": 0.015,
+      "max": 0.099
+    },
+    {
+      "type": "number",
+      "id": "chamfer_y",
+      "label": "Chamfer Y",
+      "sub_label": "Min 0.015",
+      "tag": "comparator",
+      "required": true,
+      "decimals": "3",
+      "min": 0.015,
+      "max": 0.099
+    },
+    {
+      "type": "number",
+      "id": "bead_height",
+      "label": "Bead Height",
+      "sub_label": "0.0075 - 0.0125",
+      "tag": "comparator",
+      "required": true,
+      "decimals": "4",
+      "min": 0.0075,
+      "max": 0.0125
+    },
+    {
+      "type": "number",
+      "id": "bead_length",
+      "label": "Bead Length",
+      "sub_label": "0.0550 - 0.0750",
+      "tag": "comparator",
+      "required": true,
+      "decimals": "4",
+      "min": 0.0550,
+      "max": 0.0750
+    },
+    {
+      "type": "divider",
+      "id": "cmm_divider",
+      "tag": "cmm_partial,cmm_full"
+    },
+    {
+      "type": "label",
+      "label": "CMM Measurements",
+      "id": "cmm_label",
+      "tag": "cmm_partial,cmm_full"
+    },
+    {
+      "type": "number",
+      "id": "pierce_avg",
+      "label": "Average Pierce Diameter",
+      "sub_label": "+/- 0.007",
+      "tag": "cmm_partial",
+      "required": true,
+      "decimals": "4",
+      "min": -0.007,
+      "max": 0.007
+    },
+    {
+      "type": "number",
+      "id": "od_avg",
+      "label": "Major OD Average",
+      "sub_label": "+/- 0.0025",
+      "tag": "cmm_partial",
+      "required": true,
+      "decimals": "4",
+      "min": -0.0025,
+      "max": 0.0025
+    },
+    {
+      "type": "number",
+      "id": "od_round",
+      "label": "Major OD Roundness",
+      "sub_label": "+/- 0.005",
+      "tag": "cmm_full",
+      "required": true,
+      "decimals": "4",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "type": "number",
+      "id": "id_avg",
+      "label": "Minor ID Average",
+      "sub_label": "+/- 0.01",
+      "tag": "cmm_full",
+      "required": true,
+      "decimals": "4",
+      "min": -0.01,
+      "max": 0.01
+    },
+    {
+      "type": "number",
+      "id": "id_round",
+      "label": "Minor ID Roundness",
+      "sub_label": "+/- 0.005",
+      "tag": "cmm_full",
+      "required": true,
+      "decimals": "4",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "type": "number",
+      "id": "oal_min",
+      "label": "Overall Length Min",
+      "sub_label": "+/- 0.010",
+      "tag": "cmm_partial",
+      "required": true,
+      "decimals": "4",
+      "min": -0.010,
+      "max": 0.010
+    },
+    {
+      "type": "number",
+      "id": "oal_max",
+      "label": "Overall Length Max",
+      "sub_label": "+/- 0.010",
+      "tag": "cmm_partial",
+      "required": true,
+      "decimals": "4",
+      "min": -0.010,
+      "max": 0.010
+    },
+    {
+      "type": "number",
+      "id": "oal_avg",
+      "label": "Overall Length Avg",
+      "sub_label": "+/- 0.010",
+      "tag": "cmm_full",
+      "required": true,
+      "decimals": "4",
+      "min": -0.010,
+      "max": 0.010
+    },
+    {
+      "type": "number",
+      "id": "step_min",
+      "label": "Step Height Min",
+      "sub_label": "+/- 0.010",
+      "tag": "cmm_partial",
+      "required": true,
+      "decimals": "4",
+      "min": -0.010,
+      "max": 0.010
+    },
+    {
+      "type": "number",
+      "id": "step_max",
+      "label": "Step Height Max",
+      "sub_label": "+/- 0.010",
+      "tag": "cmm_partial",
+      "required": true,
+      "decimals": "4",
+      "min": -0.010,
+      "max": 0.010
+    },
+    {
+      "type": "number",
+      "id": "step_avg",
+      "label": "Step Height Avg",
+      "sub_label": "+/- 0.010",
+      "tag": "cmm_full",
+      "required": true,
+      "decimals": "4",
+      "min": -0.010,
+      "max": 0.010
+    },
+    {
+      "type": "divider",
+      "id": "stamps_divider",
+      "tag": "stamps"
+    },
+    {
+      "type": "label",
+      "label": "Stamps",
+      "id": "stamps_label",
+      "tag": "stamps"
+    },
+    {
+      "type": "radio",
+      "id": "stamp_9",
+      "label": "9:00",
+      "tag": "stamps",
+      "required": true,
+      "options": [
+        "BRENCO® 1207B",
+        "BRENCO® 1207G",
+        "BRENCO® 1207K",
+        "BRENCO® 1207ST"
+      ]
+    },
+    {
+      "type": "number",
+      "id": "stamp_9_depth",
+      "label": "9:00 Depth",
+      "sub_label": "0.005 - 0.015",
+      "tag": "stamps",
+      "required": true,
+      "decimals": "3",
+      "min": 0.005,
+      "max": 0.015
+    },
+    {
+      "type": "radio",
+      "id": "stamp_12",
+      "label": "12:00",
+      "tag": "stamps",
+      "required": true,
+      "options": [
+        "MM-YY <strong>USA</strong> S38 <strong>A</strong>",
+        "MM-YY <strong>USA</strong> S38 <strong>C</strong>",
+        "MM-YY <strong>MEX</strong> S38 <strong>A</strong>",
+        "MM-YY <strong>MEX</strong> S38 <strong>C</strong>",
+        "MM-YY <strong>CHINA</strong> S38 <strong>A</strong>",
+        "MM-YY <strong>CHINA</strong> S38 <strong>C</strong>"
+      ]
+    },
+    {
+      "type": "number",
+      "id": "stamp_12_depth",
+      "label": "12:00 Depth",
+      "sub_label": "0.005 - 0.015",
+      "tag": "stamps",
+      "required": true,
+      "decimals": "3",
+      "min": 0.005,
+      "max": 0.015
+    },
+    {
+      "type": "radio",
+      "id": "stamp_3",
+      "label": "3:00",
+      "tag": "stamps",
+      "required": true,
+      "options": [
+        "ST-212™",
+        "EFFICIENCY PLUS®",
+        "TRU-GUARD®",
+        "DDL®"
+      ]
+    },
+    {
+      "type": "number",
+      "id": "stamp_3_depth",
+      "label": "3:00 Depth",
+      "sub_label": "0.005 - 0.015",
+      "tag": "stamps",
+      "required": true,
+      "decimals": "3",
+      "min": 0.005,
+      "max": 0.015
+    },
+    {
+      "type": "radio",
+      "id": "stamp_6",
+      "label": "6:00",
+      "tag": "stamps",
+      "required": true,
+      "options": [
+        "PAT.AMSTEDRAIL.COM/P"
+      ]
+    },
+    {
+      "type": "number",
+      "id": "stamp_6_depth",
+      "label": "6:00 Depth",
+      "sub_label": "0.005 - 0.015",
+      "tag": "stamps",
+      "required": true,
+      "decimals": "3",
+      "min": 0.005,
+      "max": 0.015
+    },
+    {
+      "type": "divider",
+      "id": "comment_divider",
+      "tag": "any"
+    },
+    {
+      "type": "text",
+      "id": "comments",
+      "label": "Comments",
+      "tag": "any"
+    }
+  ],
+  "logic": [
+    {
+      "target": "#fpi,#cc,#visual,#comparator,#cmm_partial,#cmm_full,#stamps",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value": "fpi"
+        }
+      ]
+    },
+    {
+      "target": "#visual",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value": "250"
+        }
+      ]
+    },
+    {
+      "target": "#visual,#comparator,#cmm_partial",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value": "500"
+        }
+      ]
+    },
+    {
+      "target": "#cc,#visual,#comparator,#cmm_partial",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value": "cc"
+        }
+      ]
+    },
+    {
+      "target": "#visual,#comparator,#cmm_partial",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value": "adj"
+        }
+      ]
+    },
+    {
+      "target": "#visual,ww_heat",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value": "wwc"
+        }
+      ]
+    },
+    {
+      "target": "#any",
+      "output": "show",
+      "conditions": [
+        {
+          "target": "insp_type",
+          "value_special": "any"
+        }
+      ]
+    }
+  ]
+}
