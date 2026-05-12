@@ -10,8 +10,8 @@ async function startConstruction() {
     document.getElementById("logo").src = data.logo;
 
     const form = document.getElementById("form_inputs");
-    for (let i in data["fields"]) {
-        let field = data["fields"][i];
+    form.innerHTML = "";
+    for (let field of data["fields"]) {
         if (field.type !== "divider") {
             const label = document.createElement("label");
             label.innerHTML = field.label + "<br>"
@@ -88,6 +88,11 @@ async function startConstruction() {
             }
             form.appendChild(item);
         }
+
+        if (field.type !== "divider" && field.type !== "label") {
+            mappings[field.id] = field.output;
+        }
+
         const br = document.createElement("br");
         br.setAttribute("class", "br" + " " + expandAllTags(field.id, field.tag));
         br.id = field.id + "_br";
@@ -133,8 +138,13 @@ function checkLogic() {
             }
         }
 
-        if (conditionMet) node.style.display = '';
-        else node.style.display = 'none';
+        if (conditionMet) {
+            node.style.display = '';
+            node.disabled = false;
+        } else {
+            node.style.display = 'none';
+            node.disabled = true;
+        }
     }
 }
 

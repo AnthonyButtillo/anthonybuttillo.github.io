@@ -9,39 +9,23 @@
       "type": "radio",
       "id": "insp_type",
       "label": "Inspection Type: ",
+      "output": 6074793334099844,
       "default": null,
       "required": true,
       "options": [
-        {
-          "id": "fpi",
-          "display": "First Piece Inspection"
-        },
-        {
-          "id": "250",
-          "display": "Inspection @ 250"
-        },
-        {
-          "id": "500",
-          "display": "Inspection @ 500"
-        },
-        {
-          "id": "cc",
-          "display": "Coil Change"
-        },
-        {
-          "id": "adj",
-          "display": "Adjustment"
-        },
-        {
-          "id": "wwc",
-          "display": "Weld Wire Change"
-        }
+        "First Piece Inspection",
+        "Inspection @ 250",
+        "Inspection @ 500",
+        "Coil Change",
+        "Adjustment",
+        "Weld Wire Change"
       ]
     },
     {
       "type": "text",
       "id": "initials",
       "label": "Inspector Initials",
+      "output": 8889543101206404,
       "tag": "any",
       "required": true
     },
@@ -49,6 +33,7 @@
       "type": "number",
       "id": "counter",
       "label": "Counter Number",
+      "output": 6848849520054148,
       "tag": "any",
       "required": true,
       "min": 1000000,
@@ -58,6 +43,7 @@
       "type": "number",
       "id": "bin",
       "label": "Final Bin #",
+      "output": 1782299939262340,
       "tag": "any",
       "required": true,
       "min": 0,
@@ -78,6 +64,7 @@
       "type": "number",
       "id": "final_wo",
       "label": "Final Work Order",
+      "output": 3822993520414596,
       "tag": "fpi",
       "required": true,
       "min": 0,
@@ -87,6 +74,7 @@
       "type": "number",
       "id": "blank_wo",
       "label": "Blank Work Order",
+      "output": 5511843380678532,
       "tag": "fpi",
       "required": true,
       "min": 0,
@@ -96,6 +84,7 @@
       "type": "date",
       "id": "date",
       "label": "Date",
+      "output": 8326593147785092,
       "tag": "fpi",
       "required": true,
       "auto_date": "today_respect_nights"
@@ -104,44 +93,32 @@
       "type": "radio",
       "id": "shift",
       "label": "Shift",
+      "output": 3260043566993284,
       "tag": "fpi",
       "required": true,
       "options": [
-        {
-          "id": "1d",
-          "display": "1D"
-        },
-        {
-          "id": "2d",
-          "display": "2D"
-        },
-        {
-          "id": "1N",
-          "display": "1N"
-        }
+        "1D",
+        "2D",
+        "1N"
       ]
     },
     {
       "type": "radio",
       "id": "machine",
       "label": "Machine/Line",
+      "output": 7763643194363780,
       "tag": "fpi",
       "required": true,
       "options": [
-        {
-          "id": "H1",
-          "display": "H1 626 Line A"
-        },
-        {
-          "id": "H4",
-          "display": "H4 650 Line C"
-        }
+        "H1 626 Line A",
+        "H4 650 Line C"
       ]
     },
     {
       "type": "radio",
       "id": "part",
       "label": "Part #",
+      "output": 4385943473835908,
       "tag": "fpi",
       "required": true,
       "options": [
@@ -160,6 +137,7 @@
       "id": "ww_heat",
       "label": "Weld Wire Heat",
       "sub_label": "Part: 151501",
+      "output": 4597049706368900,
       "tag": "fpi",
       "required": true
     },
@@ -167,6 +145,7 @@
       "type": "radio",
       "id": "micrometer",
       "label": "Micrometer",
+      "output": 2134143660150660,
       "tag": "fpi",
       "required": true,
       "options": [
@@ -178,6 +157,7 @@
       "type": "radio",
       "id": "caliper",
       "label": "Caliper",
+      "output": 6637743287521156,
       "tag": "fpi",
       "required": true,
       "options": [
@@ -202,6 +182,7 @@
       "id": "coil_number",
       "label": "Coil Number",
       "sub_label": "Heat - Long Date - #\n(123456-111924-01)",
+      "output": 2345249892683652,
       "tag": "cc",
       "required": true
     },
@@ -210,8 +191,10 @@
       "id": "strip_thickness",
       "label": "Strip Thickness",
       "sub_label": ".072 - .076",
+      "output": 6285899566632836,
       "tag": "cc",
       "required": true,
+      "decimals": "3",
       "min": 0.072,
       "max": 0.076
     },
@@ -230,6 +213,7 @@
       "type": "radio",
       "id": "visual_overall",
       "label": "Overall Visual",
+      "output": 4034099752947588,
       "tag": "visual",
       "required": true,
       "alignment": "horizontal",
@@ -242,6 +226,7 @@
       "type": "radio",
       "id": "visual_weld",
       "label": "Weld Quality",
+      "output": 8537699380318084,
       "tag": "visual",
       "required": true,
       "alignment": "horizontal",
@@ -254,6 +239,7 @@
       "type": "radio",
       "id": "visual_stamps",
       "label": "Verify Stamps Present & Correct",
+      "output": 374925055709060,
       "tag": "visual",
       "required": true,
       "alignment": "horizontal",
@@ -278,6 +264,7 @@
       "id": "comparator_visual",
       "label": "Profile Visual",
       "tag": "comparator",
+      "output": 234187567353732,
       "required": true,
       "alignment": "horizontal",
       "options": [
@@ -290,6 +277,7 @@
       "id": "chamfer_x",
       "label": "Chamfer X",
       "sub_label": "Min 0.015",
+      "output": 4315574729658244,
       "tag": "comparator",
       "required": true,
       "decimals": "3",
@@ -301,6 +289,7 @@
       "id": "chamfer_y",
       "label": "Chamfer Y",
       "sub_label": "Min 0.015",
+      "output": 8819174357028740,
       "tag": "comparator",
       "required": true,
       "decimals": "3",
@@ -312,6 +301,7 @@
       "id": "bead_height",
       "label": "Bead Height",
       "sub_label": "0.0075 - 0.0125",
+      "output": 4737787194724228,
       "tag": "comparator",
       "required": true,
       "decimals": "4",
@@ -323,6 +313,7 @@
       "id": "bead_length",
       "label": "Bead Length",
       "sub_label": "0.0550 - 0.0750",
+      "output": 2485987381038980,
       "tag": "comparator",
       "required": true,
       "decimals": "4",
@@ -345,6 +336,7 @@
       "id": "pierce_avg",
       "label": "Average Pierce Diameter",
       "sub_label": "+/- 0.007",
+      "output": 4878524683079556,
       "tag": "cmm_partial",
       "required": true,
       "decimals": "4",
@@ -356,6 +348,7 @@
       "id": "od_avg",
       "label": "Major OD Average",
       "sub_label": "+/- 0.0025",
+      "output": 7130324496764804,
       "tag": "cmm_partial",
       "required": true,
       "decimals": "4",
@@ -367,6 +360,7 @@
       "id": "od_round",
       "label": "Major OD Roundness",
       "sub_label": "+/- 0.005",
+      "output": 1500824962551684,
       "tag": "cmm_full",
       "required": true,
       "decimals": "4",
@@ -378,6 +372,7 @@
       "id": "id_avg",
       "label": "Minor ID Average",
       "sub_label": "+/- 0.01",
+      "output": 3752624776236932,
       "tag": "cmm_full",
       "required": true,
       "decimals": "4",
@@ -389,6 +384,7 @@
       "id": "id_round",
       "label": "Minor ID Roundness",
       "sub_label": "+/- 0.005",
+      "output": 8256224403607428,
       "tag": "cmm_full",
       "required": true,
       "decimals": "4",
@@ -400,6 +396,7 @@
       "id": "oal_min",
       "label": "Overall Length Min",
       "sub_label": "+/- 0.010",
+      "output": 937875009130372,
       "tag": "cmm_partial",
       "required": true,
       "decimals": "4",
@@ -411,6 +408,7 @@
       "id": "oal_max",
       "label": "Overall Length Max",
       "sub_label": "+/- 0.010",
+      "output": 5441474636500868,
       "tag": "cmm_partial",
       "required": true,
       "decimals": "4",
@@ -422,6 +420,7 @@
       "id": "oal_avg",
       "label": "Overall Length Avg",
       "sub_label": "+/- 0.010",
+      "output": 3189674822815620,
       "tag": "cmm_full",
       "required": true,
       "decimals": "4",
@@ -433,6 +432,7 @@
       "id": "step_min",
       "label": "Step Height Min",
       "sub_label": "+/- 0.010",
+      "output": 7693274450186116,
       "tag": "cmm_partial",
       "required": true,
       "decimals": "4",
@@ -444,6 +444,7 @@
       "id": "step_max",
       "label": "Step Height Max",
       "sub_label": "+/- 0.010",
+      "output": 2063774915972996,
       "tag": "cmm_partial",
       "required": true,
       "decimals": "4",
@@ -455,6 +456,7 @@
       "id": "step_avg",
       "label": "Step Height Avg",
       "sub_label": "+/- 0.010",
+      "output": 6567374543343492,
       "tag": "cmm_full",
       "required": true,
       "decimals": "4",
@@ -476,6 +478,7 @@
       "type": "radio",
       "id": "stamp_9",
       "label": "9:00",
+      "output": 1219349985841028,
       "tag": "stamps",
       "required": true,
       "options": [
@@ -490,6 +493,7 @@
       "id": "stamp_9_depth",
       "label": "9:00 Depth",
       "sub_label": "0.005 - 0.015",
+      "output": 5722949613211524,
       "tag": "stamps",
       "required": true,
       "decimals": "3",
@@ -500,15 +504,34 @@
       "type": "radio",
       "id": "stamp_12",
       "label": "12:00",
+      "output": 3471149799526276,
       "tag": "stamps",
       "required": true,
       "options": [
-        "MM-YY <strong>USA</strong> S38 <strong>A</strong>",
-        "MM-YY <strong>USA</strong> S38 <strong>C</strong>",
-        "MM-YY <strong>MEX</strong> S38 <strong>A</strong>",
-        "MM-YY <strong>MEX</strong> S38 <strong>C</strong>",
-        "MM-YY <strong>CHINA</strong> S38 <strong>A</strong>",
-        "MM-YY <strong>CHINA</strong> S38 <strong>C</strong>"
+        {
+          "id": "MM-YY USA S38 A",
+          "display": "MM-YY <strong>USA</strong> S38 <strong>A</strong>"
+        },
+        {
+          "id": "MM-YY USA S38 C",
+          "display": "MM-YY <strong>USA</strong> S38 <strong>C</strong>"
+        },
+        {
+          "id": "MM-YY MEX S38 A",
+          "display": "MM-YY <strong>MEX</strong> S38 <strong>A</strong>"
+        },
+        {
+          "id": "MM-YY MEX S38 C",
+          "display": "MM-YY <strong>MEX</strong> S38 <strong>C</strong>"
+        },
+        {
+          "id": "MM-YY CHINA S38 A",
+          "display": "MM-YY <strong>CHINA</strong> S38 <strong>A</strong>"
+        },
+        {
+          "id": "MM-YY CHINA S38 C",
+          "display": "MM-YY <strong>CHINA</strong> S38 <strong>C</strong>"
+        }
       ]
     },
     {
@@ -516,6 +539,7 @@
       "id": "stamp_12_depth",
       "label": "12:00 Depth",
       "sub_label": "0.005 - 0.015",
+      "output": 7974749426896772,
       "tag": "stamps",
       "required": true,
       "decimals": "3",
@@ -526,6 +550,7 @@
       "type": "radio",
       "id": "stamp_3",
       "label": "3:00",
+      "output": 656400032419716,
       "tag": "stamps",
       "required": true,
       "options": [
@@ -540,6 +565,7 @@
       "id": "stamp_3_depth",
       "label": "3:00 Depth",
       "sub_label": "0.005 - 0.015",
+      "output": 5159999659790212,
       "tag": "stamps",
       "required": true,
       "decimals": "3",
@@ -550,6 +576,7 @@
       "type": "radio",
       "id": "stamp_6",
       "label": "6:00",
+      "output": 2908199846104964,
       "tag": "stamps",
       "required": true,
       "options": [
@@ -561,6 +588,7 @@
       "id": "stamp_6_depth",
       "label": "6:00 Depth",
       "sub_label": "0.005 - 0.015",
+      "output": 7411799473475460,
       "tag": "stamps",
       "required": true,
       "decimals": "3",
@@ -576,6 +604,7 @@
       "type": "text",
       "id": "comments",
       "label": "Comments",
+      "output": 7200693240942468,
       "tag": "any"
     }
   ],
@@ -586,7 +615,7 @@
       "conditions": [
         {
           "target": "insp_type",
-          "value": "fpi"
+          "value": "First Piece Inspection"
         }
       ]
     },
@@ -596,7 +625,7 @@
       "conditions": [
         {
           "target": "insp_type",
-          "value": "250"
+          "value": "Inspection @ 250"
         }
       ]
     },
@@ -606,7 +635,7 @@
       "conditions": [
         {
           "target": "insp_type",
-          "value": "500"
+          "value": "Inspection @ 500"
         }
       ]
     },
@@ -616,7 +645,7 @@
       "conditions": [
         {
           "target": "insp_type",
-          "value": "cc"
+          "value": "Coil Change"
         }
       ]
     },
@@ -626,7 +655,7 @@
       "conditions": [
         {
           "target": "insp_type",
-          "value": "adj"
+          "value": "Adjustment"
         }
       ]
     },
@@ -636,7 +665,7 @@
       "conditions": [
         {
           "target": "insp_type",
-          "value": "wwc"
+          "value": "Weld Wire Change"
         }
       ]
     },

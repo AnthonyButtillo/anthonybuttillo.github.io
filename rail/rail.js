@@ -1,6 +1,8 @@
 let part = "";
 let token = "";
 
+let mappings = {};
+
 document.onload = onLoad();
 
 function onLoad() {
@@ -38,9 +40,7 @@ async function populate() {
         {
             method: 'GET',
             headers: {
-                Authorization: 'Bearer ' + token,
-                'smartsheet-integration-source': 'AI,SampleOrg,My-AI-Connector-v2',
-                Accept: 'string'
+                Authorization: 'Bearer ' + token, Accept: 'string'
             }
         }
     );
@@ -71,7 +71,52 @@ async function populate() {
     if (!found) alert("No Matching Data Found");
 }
 
-function trySubmit(event) {
+async function trySubmit(event) {
     const formData = Object.fromEntries(new FormData(event.target));
     console.log(formData["insp_type"]);
+
+    const output = [];
+
+    for (let id in formData) {
+        output.push({
+            "columnId": mappings[id],
+            "value": formData[id]
+        })
+    }
+
+    console.log(output);
+
+    const query = new URLSearchParams({
+        accessApiLevel: '0',
+        allowPartialSuccess: 'false',
+        overrideValidation: 'false'
+    }).toString();
+
+    const sheetId = '4571336026312580';
+    const request = new Request(
+        `https://corsproxy.io/?url=https://api.smartsheet.com/2.0/sheets/${sheetId}/rows?${query}`,
+            {
+                method: 'POST',
+                headers: {
+                    Authorization: 'Bearer ' + token, 'Content-Type': 'application/json'
+                },
+                body: JSON.stringify([
+                    {
+                        "toTop": true,
+                        "cells": output
+                    }
+                ])
+            }
+    );
+
+    const data = await sendData(request)
+
+    console.log(data);
+    startConstruction();
+}
+
+async function sendData(request) {
+    const resp = await fetch(request.clone());
+    console.log(resp);
+    return await resp.json;
 }
