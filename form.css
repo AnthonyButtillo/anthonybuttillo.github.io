@@ -65,7 +65,7 @@ body {
     border-radius: 0px;
     word-break: break-word;
     width: 100%;
-    max-width: 712px;
+    max-width: 85%;
     margin: 0px auto;
     max-height: max-content;
 }
@@ -89,7 +89,7 @@ body {
 #form {
     word-break: break-word;
     width: 100%;
-    max-width: 712px;
+    max-width: 85%;
     margin: 0 auto 50px auto;
     border-radius: 12px;
     background: center center / cover no-repeat fixed #ffffff;
@@ -144,14 +144,10 @@ body {
 }
 
 #submitbtn {
-    position: relative;
     word-break: break-word;
     width: 100%;
-    margin: 0 230px;
     font-family: inherit;
     height: 40px;
-    max-width: 100px;
-    padding: 0 7px;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
@@ -163,4 +159,14 @@ body {
     font-weight: 500;
     color: #ffffff;
     cursor: pointer;
+}
+
+@media (min-width: 830px) {
+    #headers {
+        max-width: 712px;
+    }
+
+    #form {
+        max-width: 712px;
+    }
 }

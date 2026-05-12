@@ -4,8 +4,8 @@ let token = "";
 document.onload = onLoad();
 
 function onLoad() {
+    token = getTokenCookie();
     const urlParams = new URLSearchParams(window.location.search);
-    token = urlParams.get('token');
     part = urlParams.get('part');
     startConstruction();
 }
@@ -16,7 +16,7 @@ function constructionFinished() {
 
 function addPopulateBtn() {
     const btn = document.createElement("button");
-    btn.onclick = testBTN;
+    btn.onclick = populate;
     btn.innerHTML = "Populate";
     btn.type = "button";
 
@@ -26,7 +26,7 @@ function addPopulateBtn() {
     node.appendChild(document.createElement("br"));
 }
 
-async function testBTN() {
+async function populate() {
     const query = new URLSearchParams({
         pageSize: '5',
         page: '1'

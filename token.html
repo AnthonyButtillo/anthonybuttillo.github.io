@@ -13,14 +13,17 @@
 <body style="margin: 0">
 <img src="/logo.jpg" alt="Logo" id="logo">
 <div id="headers">
-    <h1 id="h1"></h1>
+    <h1 id="h1">Token Setter</h1>
     <h2 id="h2"></h2>
 </div>
 <div id="form">
-    <form id="form_inputs" name="input" autocomplete="off" onsubmit="trySubmit(event); return false"></form>
+    <form id="form_inputs" name="input" autocomplete="off" onsubmit="trySubmit(event); return false">
+    <label for="token_input" class = "input_label">Token</label>
+    <input type = "text" class = "input_text" id = "token_input">
+    <input type="submit" value="Submit" id="submitbtn">
+    </form>
 </div>
 </body>
 <script src="/cookies.js"></script>
-<script src="constructor.js"></script>
-<script src="rail.js"></script>
+<script src="token.js"></script>
 </html>
