@@ -14,7 +14,7 @@ async function startConstruction() {
     for (let field of data["fields"]) {
         if (field.type !== "divider") {
             const label = document.createElement("label");
-            label.innerHTML = field.label + "<br>"
+            label.innerHTML = field.label + (field.required ? "<strong style='color: #e03e36'> *</strong>" : "") + "<br>"
             label.id = field.id + "_label";
             label.setAttribute("class", "input_label" + " " + expandAllTags(field.id, field.tag));
             label.setAttribute("for", field.id);
@@ -29,6 +29,12 @@ async function startConstruction() {
             }
             if (field.type === "label") {
                 label.setAttribute("class", "input_label_label" + " " + expandAllTags(field.id, field.tag));
+            } else {
+                const errorSpan = document.createElement("span");
+                errorSpan.setAttribute("class", "input_error" + " " + expandAllTags(field.id, field.tag));
+                errorSpan.id = field.id + "_error";
+                errorSpan.style.display = 'none';
+                //form.appendChild(errorSpan)
             }
         }
 
@@ -77,14 +83,15 @@ async function startConstruction() {
                     item.setAttribute("step", "0." + "0".repeat(field.decimals - 1) + "1");
                     item.setAttribute("inputmode", "decimal");
                 }
-            }
-            if (field.type === "date") {
+            } else if (field.type === "date") {
                 if (field.auto_date === "today_respect_nights") {
                     const date = new Date();
                     if (date.getHours() < 6) date.setDate(date.getDate() - 1);
                     date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
                     item.valueAsDate = date;
                 }
+            } else if (field.type === "text") {
+                if (field.pattern) item.setAttribute("pattern", field.pattern);
             }
             form.appendChild(item);
         }
@@ -111,8 +118,14 @@ async function startConstruction() {
 }
 
 function formInputChanged(event) {
-    let id = event.target.name;
-    let value = event.target.value;
+    const id = event.target.name;
+
+    console.log(id);
+    // for (let node of document.getElementsByName(id)) {
+    // console.log(node);
+    // document.getElementById(id + "_error").innerHTML = "Test Error";
+    //document.getElementById(id + "_error") .style.display = '';
+    //}
 
     checkLogic();
 }

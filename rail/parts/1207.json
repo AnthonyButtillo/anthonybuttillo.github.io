@@ -182,6 +182,7 @@
       "id": "coil_number",
       "label": "Coil Number",
       "sub_label": "Heat - Long Date - #\n(123456-111924-01)",
+      "pattern": "[0-9]{0,9}-[0-9]{6}-[0-9]{1,2}",
       "output": 2345249892683652,
       "tag": "cc",
       "required": true

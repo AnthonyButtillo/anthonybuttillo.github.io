@@ -161,6 +161,12 @@ body {
     cursor: pointer;
 }
 
+#submitbtn:disabled {
+    background-color: #9dbafd;
+    color: #f3f6fd;
+    cursor: not-allowed;
+}
+
 @media (min-width: 830px) {
     #headers {
         max-width: 712px;
@@ -169,4 +175,29 @@ body {
     #form {
         max-width: 712px;
     }
+}
+
+input:invalid {
+    border-color: #990000;
+    background-color: #ffdddd;
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+.input_error {
+    width: 100%;
+    padding: 0.3em;
+
+    font-size: 80%;
+    color: white;
+    background-color: #990000;
+    border-radius: 0 0 5px 5px;
+
+    box-sizing: border-box;
+}
+
+.input_error.active {
+    padding: 0.3em;
 }
