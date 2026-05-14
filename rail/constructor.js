@@ -8,6 +8,7 @@ async function startConstruction() {
     document.getElementById("h1").innerHTML = data.header;
     document.getElementById("h2").innerHTML = data.sub_header;
     document.getElementById("logo").src = data.logo;
+    document.title = data.header;
 
     const form = document.getElementById("form_inputs");
     form.innerHTML = "";
