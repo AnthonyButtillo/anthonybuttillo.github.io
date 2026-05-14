@@ -32,7 +32,7 @@ async function populate() {
     try {
         const data = await getRowsSmall(4484682184871812, token);
 
-
+        let found = false;
         if (data !== null) {
             for (let row of data.rows) {
                 if (row.cells[0].columnId === 3770961391996804 && row.cells[0].value.startsWith("1207"))

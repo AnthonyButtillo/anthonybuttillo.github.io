@@ -281,7 +281,7 @@
       "output": 4315574729658244,
       "tag": "comparator",
       "required": true,
-      "decimals": "3",
+      "decimals": "5",
       "min": 0.015,
       "max": 0.099
     },
@@ -293,7 +293,7 @@
       "output": 8819174357028740,
       "tag": "comparator",
       "required": true,
-      "decimals": "3",
+      "decimals": "5",
       "min": 0.015,
       "max": 0.099
     },
@@ -305,7 +305,7 @@
       "output": 4737787194724228,
       "tag": "comparator",
       "required": true,
-      "decimals": "4",
+      "decimals": "5",
       "min": 0.0075,
       "max": 0.0125
     },
@@ -317,7 +317,7 @@
       "output": 2485987381038980,
       "tag": "comparator",
       "required": true,
-      "decimals": "4",
+      "decimals": "5",
       "min": 0.0550,
       "max": 0.0750
     },
