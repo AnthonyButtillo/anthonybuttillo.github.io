@@ -1,5 +1,6 @@
 let part = "";
 let token = "";
+let outputSheet = "";
 
 let mappings = {};
 
@@ -9,11 +10,16 @@ function onLoad() {
     token = getTokenCookie();
     const urlParams = new URLSearchParams(window.location.search);
     part = urlParams.get('part');
-    startConstruction();
+    startConstruction("parts/" + part + ".json");
 }
 
-function constructionFinished() {
+function constructionFinished(data) {
     addPopulateBtn()
+    stampsInit(data);
+}
+
+function formInputChanged(event) {
+    stampInputChanged(event);
 }
 
 function addPopulateBtn() {
@@ -35,7 +41,7 @@ async function populate() {
         let found = false;
         if (data !== null) {
             for (let row of data.rows) {
-                if (row.cells[0].columnId === 3770961391996804 && row.cells[0].value.startsWith("1207"))
+                if (row.cells[0].columnId === 3770961391996804 && row.cells[0].value.startsWith(part))
                     if (row.cells[1].columnId === 8274561019367300 && row.cells[1].displayValue === document.getElementById("counter_input").value) {
                         document.getElementById("pierce_avg_input").value = row.cells[3].displayValue;
                         document.getElementById("od_avg_input").value = row.cells[5].displayValue;
@@ -79,11 +85,11 @@ async function trySubmit(event) {
 
     console.log(output);
     try {
-        const data = await postRows(output, 4571336026312580, token);
+        const data = await postRows(output, outputSheet, token);
         console.log(data);
 
         if (data !== null) {
-            startConstruction();
+            window.location.reload();
             return;
         }
     } catch (e) {

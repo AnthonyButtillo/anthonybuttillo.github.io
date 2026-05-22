@@ -1,9 +1,11 @@
 let logic = {};
 
-async function startConstruction() {
-    const resp = await fetch("parts/" + part + ".json");
+async function startConstruction(config) {
+    const resp = await fetch(config);
     const raw = await resp.text();
     const data = JSON.parse(raw);
+
+    outputSheet = data.output_sheet;
 
     document.getElementById("h1").innerHTML = data.header;
     document.getElementById("h2").innerHTML = data.sub_header;
@@ -30,12 +32,6 @@ async function startConstruction() {
             }
             if (field.type === "label") {
                 label.setAttribute("class", "input_label_label" + " " + expandAllTags(field.id, field.tag));
-            } else {
-                const errorSpan = document.createElement("span");
-                errorSpan.setAttribute("class", "input_error" + " " + expandAllTags(field.id, field.tag));
-                errorSpan.id = field.id + "_error";
-                errorSpan.style.display = 'none';
-                //form.appendChild(errorSpan)
             }
         }
 
@@ -44,7 +40,7 @@ async function startConstruction() {
                 let option = field.options[j];
                 const item = document.createElement("input");
                 item.setAttribute("class", "input_radio" + " " + expandAllTags(field.id, field.tag));
-                item.setAttribute("onChange", "formInputChanged(event);");
+                item.setAttribute("onChange", "formInputChangedRaw(event);");
                 item.type = field.type;
                 item.name = field.id;
                 if (typeof (option) === "string") option = {id: option, display: option};
@@ -67,12 +63,10 @@ async function startConstruction() {
             item.setAttribute("class", "input_" + field.type + " " + expandAllTags(field.id, field.tag));
             item.id = field.id + "_divider";
             form.appendChild(item);
-        } else if (field.type === "label") {
-            continue;
-        } else {
+        } else if (field.type !== "label") {
             const item = document.createElement("input");
             item.setAttribute("class", "input_" + field.type + " " + expandAllTags(field.id, field.tag));
-            item.setAttribute("onChange", "formInputChanged(event);");
+            item.setAttribute("onChange", "formInputChangedRaw(event);");
             item.type = field.type;
             item.name = field.id;
             item.id = field.id + "_input";
@@ -115,13 +109,13 @@ async function startConstruction() {
 
     parseLogic(data["logic"]);
     checkLogic();
-    constructionFinished();
+    constructionFinished(data);
 }
 
-function formInputChanged(event) {
+function formInputChangedRaw(event) {
     const id = event.target.name;
 
-    console.log(id);
+    //console.log(id);
     // for (let node of document.getElementsByName(id)) {
     // console.log(node);
     // document.getElementById(id + "_error").innerHTML = "Test Error";
@@ -129,6 +123,7 @@ function formInputChanged(event) {
     //}
 
     checkLogic();
+    formInputChanged(event);
 }
 
 function checkLogic() {

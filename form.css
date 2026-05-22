@@ -111,7 +111,7 @@ body {
 .input_label_label {
     font-weight: bolder;
     font-size: 30px;
-    vertical-align: 30px;
+
 }
 
 .input_text, .input_number, .input_date {
@@ -184,20 +184,4 @@ input:invalid {
 
 input:focus:invalid {
     outline: none;
-}
-
-.input_error {
-    width: 100%;
-    padding: 0.3em;
-
-    font-size: 80%;
-    color: white;
-    background-color: #990000;
-    border-radius: 0 0 5px 5px;
-
-    box-sizing: border-box;
-}
-
-.input_error.active {
-    padding: 0.3em;
 }
