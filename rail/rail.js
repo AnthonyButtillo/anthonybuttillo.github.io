@@ -46,6 +46,7 @@ async function populate() {
                         document.getElementById("pierce_avg_input").value = row.cells[3].displayValue;
                         document.getElementById("od_avg_input").value = row.cells[5].displayValue;
                         document.getElementById("od_round_input").value = row.cells[6].displayValue;
+                        document.getElementById("od_conc_input").value = row.cells[7].displayValue;
                         document.getElementById("id_avg_input").value = row.cells[8].displayValue;
                         document.getElementById("id_round_input").value = row.cells[9].displayValue;
                         document.getElementById("oal_min_input").value = row.cells[10].displayValue;
