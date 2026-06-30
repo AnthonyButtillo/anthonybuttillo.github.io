@@ -43,18 +43,18 @@ async function populate() {
             for (let row of data.rows) {
                 if (row.cells[0].columnId === 3770961391996804 && row.cells[0].value.startsWith(part))
                     if (row.cells[1].columnId === 8274561019367300 && row.cells[1].displayValue === document.getElementById("counter_input").value) {
-                        document.getElementById("pierce_avg_input").value = row.cells[3].displayValue;
-                        document.getElementById("od_avg_input").value = row.cells[5].displayValue;
-                        document.getElementById("od_round_input").value = row.cells[6].displayValue;
-                        document.getElementById("od_conc_input").value = row.cells[7].displayValue;
-                        document.getElementById("id_avg_input").value = row.cells[8].displayValue;
-                        document.getElementById("id_round_input").value = row.cells[9].displayValue;
-                        document.getElementById("oal_min_input").value = row.cells[10].displayValue;
-                        document.getElementById("oal_max_input").value = row.cells[11].displayValue;
-                        document.getElementById("oal_avg_input").value = row.cells[12].displayValue;
-                        document.getElementById("step_min_input").value = row.cells[13].displayValue;
-                        document.getElementById("step_max_input").value = row.cells[14].displayValue;
-                        document.getElementById("step_avg_input").value = row.cells[15].displayValue;
+                        populateField("pierce_avg_input", row.cells[3]);
+                        populateField("od_avg_input", row.cells[5]);
+                        populateField("od_round_input", row.cells[6]);
+                        populateField("od_conc_input", row.cells[7]);
+                        populateField("id_avg_input", row.cells[8]);
+                        populateField("id_round_input", row.cells[9]);
+                        populateField("oal_min_input", row.cells[10]);
+                        populateField("oal_max_input", row.cells[11]);
+                        populateField("oal_avg_input", row.cells[12]);
+                        populateField("step_min_input", row.cells[13]);
+                        populateField("step_max_input", row.cells[14]);
+                        populateField("step_avg_input", row.cells[15]);
                         found = true;
                         break;
                     }
@@ -68,6 +68,11 @@ async function populate() {
     }
 
     alert("Populate Failed. Please Try again.")
+}
+
+function populateField(id, input) {
+    if (document.getElementById(id) === null || input.value === undefined) return;
+    document.getElementById(id).value = input.displayValue;
 }
 
 async function trySubmit(event) {

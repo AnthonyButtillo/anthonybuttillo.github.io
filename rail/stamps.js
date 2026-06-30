@@ -28,10 +28,10 @@ function stampInputChanged(event) {
                     if (machine.checked) {
                         let stamp12 = data["12"];
                         stamp12 = stamp12Date(stamp12);
-                        if (p2 === "F1") stamp12 = stamp12.replace("<CODE>", "USA");
                         if (p2 === "MX") stamp12 = stamp12.replace("<CODE>", "MEX");
-                        if (p2 === "CH") stamp12 = stamp12.replace("<CODE>", "CHINA");
-                        if (p2 === "IN") stamp12 = stamp12.replace("<CODE>", "INDIA");
+                        else if (p2 === "CH") stamp12 = stamp12.replace("<CODE>", "CHINA");
+                        else if (p2 === "IN") stamp12 = stamp12.replace("<CODE>", "INDIA");
+                        else stamp12 = stamp12.replace("<CODE>", "USA");
                         stamp12 = stamp12.replace("<LINE>", machine.value.substring(machine.value.length - 2));
 
                         document.getElementById("stamps_label_label_sub").innerHTML =

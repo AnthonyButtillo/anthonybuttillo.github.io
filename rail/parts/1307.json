@@ -326,7 +326,7 @@
     },
     {
       "type": "label",
-      "label": "CMM Measurements",
+      "label": "CMM",
       "id": "cmm_label",
       "tag": "cmm_partial,cmm_full"
     },
